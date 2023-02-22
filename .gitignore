@@ -161,3 +161,4 @@ buildNumber.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/java,intellij,maven
 /.gitignore
+/src/test/java/contains/Credentials.java
