@@ -1,13 +1,21 @@
 package tests;
 
+import data.PrepareNewAccountData;
+import modals.NewAccountModal;
 import org.testng.annotations.Test;
+import pages.AccountsPage;
 import pages.LoginPage;
 
-public class CreateAccountTest extends BaseTest{
+public class CreateAccountTest extends BaseTest {
     @Test
-    public void createAccountTest(){
+    public void createAccountTest() {
         LoginPage loginPage = new LoginPage(driver);
         loginPage.loginToSalesForce();
-        System.out.println("");
+        AccountsPage accountsPage = new AccountsPage(driver);
+        NewAccountModal accountModal = PrepareNewAccountData.getValidData();
+        accountsPage
+                .openAccountsPage()
+                .openNewAccountModal()
+                .fillInAccountForm(accountModal);
     }
 }
