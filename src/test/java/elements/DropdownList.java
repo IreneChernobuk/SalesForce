@@ -5,7 +5,7 @@ import org.openqa.selenium.WebDriver;
 
 public class DropdownList {
     private static final String LIST_XPATH = "//div[contains(@class, 'modal-body')]//span[text()='%s']//parent::span//following-sibling::div//a";
-    private static final String OPTION_XPATH = "//div[contains(@class, 'visible')]//a[@title='%s']"; /////доделать
+    private static final String OPTION_XPATH = "//div[contains(@class, 'visible')]//a[@title='%s']";
     private WebDriver driver;
     private String labelTest;
 
