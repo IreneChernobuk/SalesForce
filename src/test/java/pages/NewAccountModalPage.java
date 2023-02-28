@@ -12,8 +12,7 @@ public class NewAccountModalPage extends BasePage {
     @FindBy(xpath = "//div[contains(@class, 'modal-body')]//span[text()='Account Name']//parent::label//following-sibling::div//input")
     private WebElement account_name_input;
     @FindBy(xpath = "//div[contains(@class, 'modal-body')]//button[@title = 'Save']")
-    private WebElement save__button;
-
+    private WebElement save_button;
     @FindBy(xpath = "//div[contains(@class, 'modal-body')]//input[@type='checkbox']")
     private WebElement checkbox;
 
@@ -34,6 +33,7 @@ public class NewAccountModalPage extends BasePage {
         new Textarea(driver, "Billing Street").inputTextarea(newAccount.getBillingStreet());
         new Textarea(driver, "Shipping Street").inputTextarea(newAccount.getShippingStreet());
         new TextInput(driver, "Billing City").inputText(newAccount.getBillingCity());
+        new TextInput(driver, "Shipping City").inputText(newAccount.getShippingCity());
         new TextInput(driver, "Billing State/Province").inputText(newAccount.getBillingState());
         new TextInput(driver, "Shipping State/Province").inputText(newAccount.getShippingState());
         new TextInput(driver, "Billing Zip/Postal Code").inputText(newAccount.getBillingZip());
@@ -41,7 +41,6 @@ public class NewAccountModalPage extends BasePage {
         new TextInput(driver, "Shipping Zip/Postal Code").inputText(newAccount.getShippingZip());
         new TextInput(driver, "Shipping Country").inputText(newAccount.getShippingCountry());
         checkbox.click();
-        //ToDo add all details
-        save__button.click();
+        save_button.click();
     }
 }

@@ -2,6 +2,7 @@ package tests;
 
 import data.PrepareNewAccountData;
 import modals.NewAccountModal;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.AccountsPage;
 import pages.LoginPage;
@@ -17,5 +18,6 @@ public class CreateAccountTest extends BaseTest {
                 .openAccountsPage()
                 .openNewAccountModal()
                 .fillInAccountForm(accountModal);
+        Assert.assertEquals(accountModal.getAccountName(), accountsPage.receiveNewAccountName(), "the names don't match");
     }
 }
