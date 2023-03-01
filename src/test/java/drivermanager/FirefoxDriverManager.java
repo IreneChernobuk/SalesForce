@@ -1,16 +1,21 @@
 package drivermanager;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
-import utils.PropertyManager;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxProfile;
+
+import java.util.Arrays;
 
 public class FirefoxDriverManager extends DriverManager {
 
     @Override
     public void createDriver() {
-        PropertyManager propertyManager = new PropertyManager();
-        System.setProperty("webdriver.chrome.driver", propertyManager.get("PATH_TO_FIREFOX"));
-        ChromeOptions options = new ChromeOptions();
-        driver = new ChromeDriver(options);
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxProfile firefoxProfile = new FirefoxProfile();
+        //help
+        firefoxProfile.setPreference("--disable-notifications", false);
+        firefoxProfile.setPreference("excludeSwitches", String.valueOf(Arrays.asList("disable-popup-blocking")));
+        driver = new FirefoxDriver(firefoxProfile);
     }
 }
