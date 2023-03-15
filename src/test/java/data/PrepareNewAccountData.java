@@ -1,9 +1,11 @@
 package data;
 
+import io.qameta.allure.Step;
 import modals.NewAccountModal;
 import utils.FakeMessageGenerator;
 
 public class PrepareNewAccountData {
+    @Step("fill data in the 'New Account' window")
     public static NewAccountModal getValidData() {
         return NewAccountModal
                 .builder()

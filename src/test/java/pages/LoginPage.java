@@ -2,6 +2,7 @@ package pages;
 
 import contains.Credentials;
 import contains.Urls;
+import io.qameta.allure.Step;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -21,7 +22,7 @@ public class LoginPage extends BasePage {
     public LoginPage(WebDriver driver) {
         super(driver);
     }
-
+@Step("Open Login page. Input username '{USERNAME}' and '{PASSWORD}' and click button LOGIN")
     public void loginToSalesForce() {
         LOGGER.debug(String.format("Attempt to open: %s", Urls.SALES_FORCE_TO_LOGIN));
         driver.get(Urls.SALES_FORCE_TO_LOGIN);
