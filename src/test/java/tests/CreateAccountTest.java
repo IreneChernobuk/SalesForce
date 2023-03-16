@@ -1,6 +1,9 @@
 package tests;
 
 import data.PrepareNewAccountData;
+import io.qameta.allure.Description;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import modals.NewAccountModal;
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -13,6 +16,8 @@ public class CreateAccountTest extends BaseTest {
     private static final Logger LOGGER = LogManager.getLogger(CreateAccountTest.class.getName());
 
     @Test
+    @Description("create new account")
+    @Severity(SeverityLevel.NORMAL)
     public void createAccountTest() {
         LoginPage loginPage = new LoginPage(driver);
         LOGGER.info(String.format("Page %s initialized", LoginPage.class.getName()));
